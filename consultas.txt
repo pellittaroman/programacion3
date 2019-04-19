@@ -1,2 +1,0 @@
-1)SELECT * FROM `productos` Orden BY pnombre asc
-2)SELECT * FROM `proveedores` WHERE localidad="Quilmes"
