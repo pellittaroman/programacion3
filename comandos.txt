@@ -1,0 +1,5 @@
+Proveedores
+INSERT INTO `proveedores`(`Nombre`, `Domicilio`, `Localidad`) VALUES ("Perez","Peron 876","Quilmes"),("Gimenez","Mitre 750","Avellaneda"),("Aguirre","Boedo 634","Bernal")
+
+Productos
+INSERT INTO `Productos`(`pNombre`, `Precio`, `Tamanio`) VALUES ("Caramelos",1.5,"Chico"),("Cigarillos",45.89,"Mediano"),("Gaseosa",15.80,"Grande")
