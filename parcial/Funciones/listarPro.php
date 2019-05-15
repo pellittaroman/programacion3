@@ -1,13 +1,22 @@
 <?php
-include_once "./Clases/producto.php";
+include_once "./Clases/productos.php";
 
 
-if(isset ($_GET["id"]) && isset($_GET["usuario"]) )
+if(isset ($_GET["producto"]) || isset($_GET["usuario"]) )
 {
-    
-    $miClase = new producto();
+    if(isset($_GET["producto"]))
+    {
+        $var="id";
+        $get=$_GET["producto"];
+    }
+    else
+    {
+        $var="usuario";
+        $get=$_GET["usuario"];
+    }
+    $miClase = new productos();
    
-    $arrayMiClase = producto::leerArchivo("./Archivos/producto.txt");
+    $arrayMiClase = productos::leerArchivo("./Archivos/producto.txt");
    	$flag=false;
    	
     $i = 0;
@@ -15,10 +24,15 @@ if(isset ($_GET["id"]) && isset($_GET["usuario"]) )
     {
     foreach($arrayMiClase as $value)
     {
-        if($value["producto"] == $_GET["id"]|| $value["usuario"]==$_GET["usuario"])
+        if($value[$var] == $get)
         {
-            $flag= true;
-            echo "ID: $value["id"] -- Nombre: $value["nombre"] -- Precio: $value["precio"] -- Foto: $value["foto"] -- Usuario: $value["usuario"]";
+            $id= $value["id"]; 
+        $nombre= $value["nombre"];
+        $precio= $value["precio"];
+        $foto= $value['foto'];
+        $usuario= $value["usuario"];
+        echo "ID: $id -- Nombre: $nombre -- Precio: $precio -- Foto: $foto -- Usuario: $usuario --".PHP_EOL;
+        $flag=true;
         }
         $i++;
     }

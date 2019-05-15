@@ -1,2 +1,1 @@
-{"nombre":"roman","clave":"12345"}
-{"nombre":"pablo","clave":"12"}
+{"nombre":"roman","clave":"111111"}

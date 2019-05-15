@@ -33,7 +33,9 @@ switch ($tipo) {
             case 'login':
                 require_once "./Funciones/login.php";
                 break;
-
+            case 'cargarProducto':
+                require_once "./Funciones/cargarProducto.php";
+                break;    
             case 'modificarProducto':
                 require_once "./Funciones/modificar.php";
                 break;

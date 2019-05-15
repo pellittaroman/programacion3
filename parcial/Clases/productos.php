@@ -56,7 +56,7 @@ class productos
 			$i = 0;
 			while (($bufer = fgets($gestor, 4096)) !== false)
         	{
-                $miClase = new producto();
+                $miClase = new productos();
                 $miClase = json_decode($bufer, true);
         		$array[$i] = $miClase;
         		$i++;
@@ -70,6 +70,17 @@ class productos
     		fclose($gestor);
     		return $array;
 		}   	
+    }
+    public  function guardarArray($array)
+    {
+        $archivo=fopen("./Archivos/proveedores.txt", "w");  
+        foreach ($array as $value) 
+        {
+            $dato= json_encode($value);
+            $dato.="\r\n";
+            fwrite($archivo, $dato);
+        }
+        fclose($archivo);
     }
 
    

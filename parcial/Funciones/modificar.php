@@ -2,14 +2,14 @@
 include_once "./Clases/productos.php";
 include_once "./Funciones/agregarFoto.php";
 
-if(isset($_POST["id"]) isset($_POST["nombre"]) && isset($_POST["precio"])&& isset($_FILES["imagen"]) && isset ($_POST["usuario"]) )
+if(isset ($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["precio"]) && isset ($_FILES ["imagen"]) && isset($_POST["usuario"]) )
 {
     
-    $miClase = new producto();
-   
-    $arrayMiClase = producto::leerArchivo("./Archivos/productos.txt");
+    $miClase = new productos();
+    $array;
+    $arrayMiClase = productos::leerArchivo("./Archivos/producto.txt");
    	$flag=false;
-   	$foto=cargar($_FILES["imagen"],$_POST["id"]);
+   	$foto=cargar($_FILES,$_POST["id"]);
     $i = 0;
     if($arrayMiClase!=null)
     {
@@ -17,19 +17,28 @@ if(isset($_POST["id"]) isset($_POST["nombre"]) && isset($_POST["precio"])&& isse
     {
         if($value["id"] == $_POST["id"])
         {
+            $value["nombre"]=$_POST["nombre"];
+            $value["precio"]=$_POST["precio"];
+            $value["foto"]=$foto;
+            $value["usuario"]=$_POST["usuario"];
+            $array.=$value;
             $flag= true;
-            break;
+        }
+        else
+        {
+            $array.=$value;
         }
         $i++;
     }
     if($flag==true)
     {
-    	$miClase -> miConstructor($_POST["id"], $_POST["nombre"],$_POST["precio"],$foto,$_POST["usuario"]);
-    	$miClase -> guardarArchivo("./Archivos/productos.txt");
+    	$miClase->guardarArray($array);
     }
-    else {
-    	echo "No se encontro id";
+    else
+    {
+        echo "No se encontro id";
     }
+  
     
     }
     else

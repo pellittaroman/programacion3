@@ -1,13 +1,13 @@
 <?php
-include_once "./Clases/producto.php";
-include_once "./Funciones/cargarFoto.php";
+include_once "./Clases/productos.php";
+include_once "./Funciones/agregarFoto.php";
 
-if(isset ($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["precio"]) isset ($_FILES ["imagen"]) && isset($_POST["usuario"]) )
+if(isset ($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["precio"]) && isset ($_FILES ["imagen"]) && isset($_POST["usuario"]) )
 {
     
-    $miClase = new producto();
-    $foto=cargar($_FILES,$_POST["id"])
-    $arrayMiClase = producto::leerArchivo("./Archivos/producto.txt");
+    $miClase = new productos();
+    $foto=cargar($_FILES,$_POST["id"]);
+    $arrayMiClase = productos::leerArchivo ("./Archivos/producto.txt");
    	$flag=false;
    	
     $i = 0;

@@ -1,8 +1,8 @@
 <?php
-include_once "./Clases/producto.php";
+include_once "./Clases/productos.php";
 
-    $miClase = new producto();
-    $arrayMiClase = producto::leerArchivo("./Archivos/producto.txt");
+    $miClase = new productos();
+    $arrayMiClase = productos::leerArchivo("./Archivos/producto.txt");
    	
    	
     $i = 0;
@@ -10,7 +10,12 @@ include_once "./Clases/producto.php";
     {
     foreach($arrayMiClase as $value)
     {
-        echo "ID: $value["id"] -- Nombre: $value["nombre"] -- Precio: $value["precio"] -- Foto: $value["foto"] -- Usuario: $value["usuario"]";
+        $id= $value["id"]; 
+        $nombre= $value["nombre"];
+        $precio= $value["precio"];
+        $foto= $value['foto'];
+        $usuario= $value["usuario"];
+        echo "ID: $id -- Nombre: $nombre -- Precio: $precio -- Foto: $foto -- Usuario: $usuario --".PHP_EOL;
         $i++;
     }
     

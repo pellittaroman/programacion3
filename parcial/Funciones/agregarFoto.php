@@ -23,20 +23,20 @@ function cargar($file, $id)
 
 	
     $dicBackup.=$datoImagen;
-    $dicBackup.="."
-	$dicBackup .= $dic;
+    $dicBackup.=".";
+	$dicBackup .=$explode[$tamaño - 1];
 
 	if(!file_exists($dic))
 	{
         
-        move_uploaded_file($_FILES["foto"]["tmp_name"], $dic);	
+        move_uploaded_file($_FILES["imagen"]["tmp_name"], $dic);	
         	
 	}
 	else
 	{
-        copy($dic, $dicBackup);
         
-		//move_uploaded_file($_FILES["foto"]["tmp_name"], $dic);
+        
+		move_uploaded_file($_FILES["imagen"]["tmp_name"], $dicBackup);
 	}
     
     return $dic;
