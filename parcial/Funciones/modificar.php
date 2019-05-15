@@ -6,7 +6,7 @@ if(isset ($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["precio"]) &&
 {
     
     $miClase = new productos();
-    $array;
+    $array=array();
     $arrayMiClase = productos::leerArchivo("./Archivos/producto.txt");
    	$flag=false;
    	$foto=cargar($_FILES,$_POST["id"]);
@@ -21,12 +21,12 @@ if(isset ($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["precio"]) &&
             $value["precio"]=$_POST["precio"];
             $value["foto"]=$foto;
             $value["usuario"]=$_POST["usuario"];
-            $array.=$value;
+            $array[$i]=$value;
             $flag= true;
         }
         else
         {
-            $array.=$value;
+            $array[$i]=$value;
         }
         $i++;
     }

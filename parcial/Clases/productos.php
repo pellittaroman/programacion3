@@ -73,7 +73,7 @@ class productos
     }
     public  function guardarArray($array)
     {
-        $archivo=fopen("./Archivos/proveedores.txt", "w");  
+        $archivo=fopen("./Archivos/producto.txt", "w");  
         foreach ($array as $value) 
         {
             $dato= json_encode($value);

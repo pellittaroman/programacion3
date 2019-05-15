@@ -1,2 +1,1 @@
-{"id":"22","nombre":"hortencias","precio":"300.75","foto":".\/Fotos\/22-05.15.19.jpg","usuario":"roman"}
-{"id":"33","nombre":"tulipanes","precio":"105","foto":".\/Fotos\/33-05.15.19.jpg","usuario":"arley"}
+{"id":"33","nombre":"tulipanes","precio":"107","foto":".\/Fotos\/33-05.15.19.JPG","usuario":"arley"}
