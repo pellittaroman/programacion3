@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-07-2019 a las 22:16:46
+-- Tiempo de generación: 30-07-2019 a las 22:23:27
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -91,7 +91,7 @@ CREATE TABLE `facturas` (
 
 INSERT INTO `facturas` (`id`, `importe`, `codigoMesa`, `fecha`) VALUES
 (1, 2380, 'asd123', '2019-07-15'),
-(2, 0, 'atr33', '2019-07-30');
+(2, 400, 'atr33', '2019-07-30');
 
 -- --------------------------------------------------------
 
@@ -183,8 +183,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `password`, `tipo`) VALUES
-(1, 'Giuliano', 'aassdd', 'cocinero'),
-(2, 'GGT', 'aassdd', 'socio'),
+(1, 'cocinero1', '1212', 'cocinero'),
+(2, 'REP', '2112', 'socio'),
 (3, 'mozo1', 'aassdd', 'mozo'),
 (4, 'bartender1', 'aassdd', 'bartender'),
 (5, 'cliente1', 'aassdd', 'cliente'),
